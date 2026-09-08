@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURAÇÕES BÁSICAS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Caça aos Elementos</title>
+
+
+    <!-- =====================================================
+         ARQUIVO CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CONTAINER PRINCIPAL DO JOGO
+    ====================================================== -->
+
+    <main class="container-jogo">
+
+
+        <!-- =================================================
+             CABEÇALHO
+        ================================================== -->
+
+        <header class="cabecalho">
+
+
+            <!-- =============================================
+                 TÍTULO E SLOGAN
+            ============================================== -->
+
+            <div class="area-titulo">
+
+                <h1>
+                    CAÇA AOS ELEMENTOS
+                </h1>
+
+
+                <p class="slogan">
+
+                    Encontre os elementos certos e complete o desafio!
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SISTEMA DE NÍVEL
+
+                 ALTERADO PELO JAVASCRIPT
+            ============================================== -->
+
+            <div class="area-nivel">
+
+                <span class="texto-nivel">
+
+                    NÍVEL
+
+                </span>
+
+
+                <span
+                    id="nivelAtual"
+                    class="numero-nivel"
+                >
+
+                    1
+
+                </span>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PERGUNTA DA FASE
+        ================================================== -->
+
+        <section class="caixa-pergunta">
+
+            <h2>
+
+                QUAIS ELEMENTOS FORMAM A LIGA DO(a)
+
+                <span id="nomeLiga">
+
+                    LATÃO
+
+                </span>
+
+                ?
+
+            </h2>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ÁREA DA TABELA PERIÓDICA
+        ================================================== -->
+
+        <section class="area-tabela">
+
+
+            <!-- =============================================
+                 TOPO DA ÁREA DA TABELA
+
+                 ESQUERDA:
+                 - Título
+
+                 DIREITA:
+                 - Elementos selecionados
+                 - Botões
+            ============================================== -->
+
+            <div class="topo-tabela">
+
+
+                <!-- =========================================
+                     TÍTULO DA TABELA
+                ========================================== -->
+
+                <div class="titulo-tabela">
+
+                    <h2>
+                        TABELA PERIÓDICA
+                    </h2>
+
+
+                    <p>
+                        Clique nos elementos para formar a liga metálica.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     PAINEL DOS ELEMENTOS SELECIONADOS
+
+                     FICA AO LADO DO TÍTULO PARA
+                     ECONOMIZAR ESPAÇO VERTICAL.
+                ========================================== -->
+
+                <div class="painel-elementos">
+
+
+                    <!-- CABEÇALHO -->
+
+                    <div class="cabecalho-selecao">
+
+
+                        <h3>
+                            ELEMENTOS SELECIONADOS
+                        </h3>
+
+
+                        <!-- BOTÕES -->
+
+                        <div class="botoes-resposta">
+
+
+                            <!-- LIMPAR -->
+
+                            <button
+                                id="btnLimpar"
+                                class="btn btn-limpar"
+                                type="button"
+                            >
+
+                                LIMPAR
+
+                            </button>
+
+
+
+                            <!-- VERIFICAR -->
+
+                            <button
+                                id="btnVerificar"
+                                class="btn btn-verificar"
+                                type="button"
+                            >
+
+                                VERIFICAR
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         ELEMENTOS ESCOLHIDOS
+                    ====================================== -->
+
+                    <div
+                        id="elementosSelecionados"
+                        class="elementos-selecionados"
+                    >
+
+                        <p class="mensagem-vazia">
+
+                            Selecione os elementos
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 TABELA PERIÓDICA
+
+                 OS ELEMENTOS SÃO GERADOS PELO JAVASCRIPT
+            ============================================== -->
+
+            <div
+                id="tabelaPeriodica"
+                class="tabela-periodica"
+            >
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL DE RESULTADO
+    ====================================================== -->
+
+    <div
+        id="modal"
+        class="modal"
+    >
+
+
+        <div class="modal-conteudo">
+
+
+            <!-- =============================================
+                 ÍCONE
+            ============================================== -->
+
+            <div
+                id="modalIcone"
+                class="modal-icone"
+            >
+
+                ✓
+
+            </div>
+
+
+
+            <!-- =============================================
+                 TÍTULO
+            ============================================== -->
+
+            <h2
+                id="modalTitulo"
+            >
+
+                CORRETO!
+
+            </h2>
+
+
+
+            <!-- =============================================
+                 MENSAGEM
+            ============================================== -->
+
+            <p
+                id="modalMensagem"
+            >
+
+                Você acertou!
+
+            </p>
+
+
+
+            <!-- =============================================
+                 ÁREA DO GRÁFICO
+
+                 APARECE SOMENTE QUANDO O JOGADOR ACERTA.
+            ============================================== -->
+
+            <div
+                id="areaGraficoModal"
+                class="area-grafico-modal"
+            >
+
+
+                <h3>
+                    PROPORÇÃO DA LIGA
+                </h3>
+
+
+
+                <!-- GRÁFICO -->
+
+                <div class="grafico-modal-container">
+
+                    <canvas
+                        id="graficoLiga"
+                    >
+
+                    </canvas>
+
+                </div>
+
+
+
+                <!-- LEGENDA -->
+
+                <div
+                    id="legendaGrafico"
+                    class="legenda-grafico"
+                >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 BOTÃO DO MODAL
+            ============================================== -->
+
+            <button
+                id="btnModal"
+                class="btn btn-modal"
+                type="button"
+            >
+
+                CONTINUAR
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CHART.JS
+
+         BIBLIOTECA UTILIZADA PARA O GRÁFICO
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <!-- =====================================================
+         DADOS DAS LIGAS METÁLICAS
+    ====================================================== -->
+
+    <script src="js/dadosLigas.js"></script>
+
+
+
+    <!-- =====================================================
+         MECÂNICA PRINCIPAL DO JOGO
+    ====================================================== -->
+
+    <script src="js/jogo.js"></script>
+
+
+</body>
+
+</html>

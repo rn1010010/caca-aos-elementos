@@ -1,0 +1,1525 @@
+/* =========================================================
+   CAÇA AOS ELEMENTOS
+   ARQUIVO PRINCIPAL DE ESTILIZAÇÃO
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO GERAL
+========================================================= */
+
+html {
+
+    width: 100%;
+
+    min-height: 100%;
+
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    font-family:
+
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+
+    /* FUNDO DO JOGO */
+
+    background:
+
+        radial-gradient(
+            circle at top center,
+            #17375f 0%,
+            #091827 42%,
+            #03080f 100%
+        );
+
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   CONTAINER PRINCIPAL
+========================================================= */
+
+.container-jogo {
+
+    width: 100%;
+
+    max-width: 1440px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+
+    /*
+       ESPAÇAMENTO REDUZIDO PARA
+       A TABELA CABER NA TELA.
+    */
+
+    padding:
+
+        18px
+        70px
+        10px;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+========================================================= */
+
+.area-titulo {
+
+    text-align: center;
+
+}
+
+
+.area-titulo h1 {
+
+    font-size: 25px;
+
+    margin-top: -10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+
+    text-shadow:
+
+        0 0 10px rgba(0, 200, 255, 0.6),
+
+        0 0 25px rgba(0, 200, 255, 0.3);
+
+}
+
+
+/* =========================================================
+   SLOGAN
+========================================================= */
+
+.slogan {
+
+    margin-top: 5px;
+
+    font-size: 16px;
+
+    color: #b8e9ff;
+
+}
+
+
+/* =========================================================
+   ÁREA DO NÍVEL
+========================================================= */
+
+.area-nivel {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+
+        6px
+        10px;
+
+    border:
+
+        1px solid #36d9ff;
+
+    border-radius: 12px;
+
+    background:
+
+        rgba(5, 30, 48, 0.85);
+
+    box-shadow:
+
+        0 0 15px rgba(0, 200, 255, 0.25);
+
+}
+
+
+.texto-nivel {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #9edff5;
+
+}
+
+
+.numero-nivel {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+
+        #00a9d9;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   CAIXA DA PERGUNTA
+========================================================= */
+
+.caixa-pergunta {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+
+        6px
+        20px;
+
+    border:
+
+        2px solid rgba(56, 213, 255, 0.8);
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(13, 53, 82, 0.95),
+            rgba(5, 22, 38, 0.95)
+        );
+
+    box-shadow:
+
+        0 0 20px rgba(0, 191, 255, 0.12);
+
+    margin-bottom: 3px;
+
+}
+
+
+.caixa-pergunta h2 {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    letter-spacing: 1px;
+
+}
+
+
+#nomeLiga {
+
+    color: #2de1ff;
+
+    text-shadow:
+
+        0 0 10px rgba(45, 225, 255, 0.7);
+
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL DA TABELA
+========================================================= */
+
+.area-tabela {
+
+    width: 100%;
+
+    padding:
+
+        8px
+        18px
+        12px;
+
+    border-radius: 20px;
+
+    background:
+
+        rgba(4, 18, 29, 0.92);
+
+    border:
+
+        1px solid rgba(51, 196, 255, 0.25);
+
+    box-shadow:
+
+        0 0 25px rgba(0, 174, 255, 0.06);
+
+}
+
+
+/* =========================================================
+   TOPO DA TABELA
+
+   ESQUERDA:
+   TÍTULO
+
+   DIREITA:
+   ELEMENTOS SELECIONADOS
+========================================================= */
+
+.topo-tabela {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 28px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA TABELA
+========================================================= */
+
+.titulo-tabela {
+
+    flex:
+
+        0
+        0
+        auto;
+
+
+    width: max-content;
+
+    min-width: max-content;
+
+}
+
+
+.titulo-tabela h2 {
+
+    color: #ffffff;
+
+
+
+        /* Tamanho da fonte */
+    font-size: 28px;
+
+    /* Mantém o texto sempre em uma linha */
+    white-space: nowrap;
+
+    /* Impede a quebra das palavras */
+    word-break: normal;
+
+    /* Remove margem padrão */
+    margin: 0;
+}
+
+
+.titulo-tabela p {
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #8fb7c7;
+
+    line-height: 1.3;
+
+}
+
+
+/* =========================================================
+   PAINEL DOS ELEMENTOS SELECIONADOS
+
+   AGORA FICA AO LADO DO TÍTULO.
+========================================================= */
+
+.painel-elementos {
+
+    flex: 1;
+
+    max-width: 780px;
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO DA SELEÇÃO
+========================================================= */
+
+.cabecalho-selecao {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.painel-elementos h3 {
+
+    color: #82eaff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes-resposta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    letter-spacing: 0.4px;
+
+    border-radius: 10px;
+
+    transition:
+
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.btn:hover {
+
+    transform:
+
+        translateY(-1px);
+
+    filter:
+
+        brightness(1.12);
+
+}
+
+
+.botoes-resposta .btn {
+
+    min-height: 36px;
+
+    padding:
+
+        7px
+        18px;
+
+}
+
+
+.btn-limpar {
+
+    color: white;
+
+    background:
+
+        #2c3d4d;
+
+}
+
+
+.btn-verificar {
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #20b9e4,
+            #087ea4
+        );
+
+    box-shadow:
+
+        0 0 14px rgba(0, 184, 230, 0.25);
+
+}
+
+
+/* =========================================================
+   ÁREA DOS ELEMENTOS SELECIONADOS
+========================================================= */
+
+.elementos-selecionados {
+
+    width: 100%;
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    padding:
+
+        4px
+        8px;
+
+    border-radius: 9px;
+
+    border:
+
+        2px dashed rgba(0, 194, 255, 0.35);
+
+    background:
+
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+.mensagem-vazia {
+
+    color: #9bb5c4;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   CARTÕES DOS ELEMENTOS ESCOLHIDOS
+========================================================= */
+
+.elemento-selecionado {
+
+    position: relative;
+
+    width: 54px;
+
+    height: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    border:
+
+        1px solid #21d4fd;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #123e59,
+            #071b29
+        );
+
+    box-shadow:
+
+        0 0 8px rgba(0, 194, 255, 0.16);
+
+}
+
+
+.elemento-selecionado .simbolo {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+.elemento-selecionado .nome {
+
+    max-width: 46px;
+
+    margin-top: 2px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 10px;
+
+    color: #a8d8e9;
+
+}
+
+
+/* =========================================================
+   BOTÃO REMOVER
+========================================================= */
+
+.remover-elemento {
+
+    position: absolute;
+
+    top: 1px;
+
+    right: 4px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ff8d9b;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   TABELA PERIÓDICA
+========================================================= */
+
+.tabela-periodica {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(18, minmax(0, 1fr));
+
+    grid-template-rows:
+
+        repeat(9, 41px);
+
+    gap: 4px;
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   BOTÃO DE CADA ELEMENTO
+========================================================= */
+
+.elemento {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    border:
+
+        1px solid rgba(255, 255, 255, 0.22);
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    color: #15232c;
+
+    overflow: hidden;
+
+    transition:
+
+        transform 0.16s ease,
+        filter 0.16s ease,
+        box-shadow 0.16s ease,
+        border-color 0.16s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.elemento:hover {
+
+    transform:
+
+        scale(1.06);
+
+    z-index: 20;
+
+    filter:
+
+        brightness(1.08);
+
+    border-color:
+
+        #ffffff;
+
+    box-shadow:
+
+        0 0 12px rgba(255, 255, 255, 0.28);
+
+}
+
+
+/* =========================================================
+   ELEMENTO SELECIONADO
+========================================================= */
+
+.elemento.selecionado {
+
+    border:
+
+        2px solid #00e5ff;
+
+    box-shadow:
+
+        0 0 14px rgba(0, 229, 255, 0.75);
+
+    filter:
+
+        brightness(1.15);
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   NÚMERO ATÔMICO
+========================================================= */
+
+.numero-atomico {
+
+    position: absolute;
+
+    top: 3px;
+
+    left: 5px;
+
+    font-size: 8px;
+
+    opacity: 0.8;
+
+}
+
+
+/* =========================================================
+   SÍMBOLO
+========================================================= */
+
+.simbolo-elemento {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   NOME DO ELEMENTO
+========================================================= */
+
+.nome-elemento {
+
+    display: block;
+
+    margin-top: 2px;
+
+    padding:
+
+        0
+        2px;
+
+    font-size: 9.5px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    opacity: 0.88;
+
+}
+
+
+/* =========================================================
+   CORES DA TABELA PERIÓDICA
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   HIDROGÊNIO
+--------------------------------------------------------- */
+
+.elemento.hidrogenio {
+
+    background:
+
+        #b7d86b;
+
+}
+
+
+/* ---------------------------------------------------------
+   METAIS ALCALINOS
+
+   Li
+   Na
+   K
+   Rb
+   Cs
+   Fr
+--------------------------------------------------------- */
+
+.elemento.alcalino {
+
+    background:
+
+        #f1b900;
+
+}
+
+
+/* ---------------------------------------------------------
+   METAIS ALCALINO-TERROSOS
+
+   Be
+   Mg
+   Ca
+   Sr
+   Ba
+   Ra
+--------------------------------------------------------- */
+
+.elemento.alcalino-terroso {
+
+    background:
+
+        #f5d92c;
+
+}
+
+
+/* ---------------------------------------------------------
+   METAIS DE TRANSIÇÃO
+--------------------------------------------------------- */
+
+.elemento.transicao {
+
+    background:
+
+        #e59a9a;
+
+
+}
+
+
+/* ---------------------------------------------------------
+   METAIS PÓS-TRANSIÇÃO
+--------------------------------------------------------- */
+
+.elemento.pos-transicao {
+
+    background:
+
+        #b6c8ce;
+
+}
+
+
+/* ---------------------------------------------------------
+   METALOIDES
+--------------------------------------------------------- */
+
+.elemento.metaloide {
+
+    background:
+
+        #8fc2c0;
+
+}
+
+
+/* ---------------------------------------------------------
+   NÃO METAIS
+--------------------------------------------------------- */
+
+.elemento.nao-metal {
+
+    background:
+
+        #a6cc45;
+
+}
+
+
+/* ---------------------------------------------------------
+   HALOGÊNIOS
+--------------------------------------------------------- */
+
+.elemento.halogenio {
+
+    background:
+
+        #8ec5d5;
+
+}
+
+
+/* ---------------------------------------------------------
+   GASES NOBRES
+--------------------------------------------------------- */
+
+.elemento.gas-nobre {
+
+    background:
+
+        #78add0;
+
+}
+
+
+/* ---------------------------------------------------------
+   LANTANÍDEOS
+--------------------------------------------------------- */
+
+.elemento.lantanideo {
+
+    background:
+
+        #9fd3dc;
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTINÍDEOS
+--------------------------------------------------------- */
+
+.elemento.actinideo {
+
+    background:
+
+        #d2aec8;
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+
+        rgba(0, 0, 0, 0.72);
+
+    backdrop-filter:
+
+        blur(5px);
+
+    z-index: 999;
+
+}
+
+
+.modal.ativo {
+
+    display: flex;
+
+}
+
+
+.modal-conteudo {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    padding:
+
+        25px;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #102a3b,
+            #07131f
+        );
+
+    border:
+
+        1px solid rgba(60, 211, 255, 0.35);
+
+    box-shadow:
+
+        0 0 35px rgba(0, 194, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   ÍCONE DO MODAL
+========================================================= */
+
+.modal-icone {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin:
+
+        0
+        auto
+        12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+
+        #0e9f70;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   TÍTULO DO MODAL
+========================================================= */
+
+#modalTitulo {
+
+    font-size: 26px;
+
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+#modalMensagem {
+
+    margin:
+
+        8px
+        0
+        12px;
+
+    color: #b9dce8;
+
+}
+
+
+/* =========================================================
+   ÁREA DO GRÁFICO
+========================================================= */
+
+.area-grafico-modal {
+
+    display: none;
+
+    margin:
+
+        14px
+        0;
+
+    padding:
+
+        14px;
+
+    border-radius: 15px;
+
+    border:
+
+        1px solid rgba(72, 205, 255, 0.35);
+
+    background:
+
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+.area-grafico-modal.ativo {
+
+    display: block;
+
+}
+
+
+.area-grafico-modal h3 {
+
+    color: #82eaff;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   CONTAINER DO GRÁFICO
+========================================================= */
+
+.grafico-modal-container {
+
+    width: 200px;
+
+    height: 200px;
+
+    margin:
+
+        0
+        auto;
+
+}
+
+
+#graficoLiga {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+}
+
+
+/* =========================================================
+   LEGENDA
+========================================================= */
+
+.legenda-grafico {
+
+    max-width: 380px;
+
+    margin:
+
+        10px
+        auto
+        0;
+
+}
+
+
+.item-legenda {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+
+        6px
+        10px;
+
+    margin-bottom: 5px;
+
+    border-radius: 7px;
+
+    background:
+
+        rgba(255, 255, 255, 0.05);
+
+    font-size: 13px;
+
+}
+
+
+.cor-legenda {
+
+    display: inline-block;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    margin-right: 7px;
+
+}
+
+
+/* =========================================================
+   BOTÃO DO MODAL
+========================================================= */
+
+.btn-modal {
+
+    padding:
+
+        10px
+        25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00b8e6,
+            #007ba8
+        );
+
+    color: white;
+
+    box-shadow:
+
+        0 0 15px rgba(0, 184, 230, 0.25);
+
+}
+
+
+/* =========================================================
+   TELAS GRANDES
+
+   AJUSTE PARA MANTER O JOGO EM UMA TELA.
+========================================================= */
+
+@media
+(min-width: 1101px)
+and
+(min-height: 850px) {
+
+    body {
+
+        overflow-y: hidden;
+
+    }
+
+
+    .container-jogo {
+
+        min-height: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TELAS MÉDIAS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+
+    .container-jogo {
+
+        padding:
+
+            20px
+            20px
+            30px;
+
+    }
+
+
+    .topo-tabela {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .titulo-tabela {
+
+        flex: none;
+
+    }
+
+
+    .painel-elementos {
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+
+    .area-tabela {
+
+        overflow-x: auto;
+
+    }
+
+
+    .tabela-periodica {
+
+        min-width: 850px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .area-nivel {
+
+        position: static;
+
+        margin-top: 12px;
+
+    }
+
+
+    .area-titulo h1 {
+
+        font-size: 25px;
+        
+        text-align: center;
+
+    }
+
+
+    .slogan {
+
+        font-size: 16px;
+
+        text-align: center;
+
+    }
+
+
+    .caixa-pergunta h2 {
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .area-tabela {
+
+        padding:
+
+            16px
+            12px;
+
+    }
+
+
+    .cabecalho-selecao {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .botoes-resposta {
+
+        width: 100%;
+
+    }
+
+
+    .botoes-resposta .btn {
+
+        flex: 1;
+
+    }
+
+}
